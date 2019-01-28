@@ -1,0 +1,145 @@
+body {
+    margin: 0; /* обнуление отступов для body - хорошая практика. спросите меня на уроке, почему */
+    padding: 0;
+    font-size: 18px;
+    font-family: sans-serif; /* шрифты будут подтягиваться из системы */
+    color: #636363;
+}
+
+p {
+margin-bottom: 0;
+}
+
+/* hr тоже можно стилизовать. Большая часть стилей должна быть вам понятна, кроме префиксов
+ Префиксы позволяют настраивать работу CSS в разных браузерах: webkit - safari, moz - firefox, ms - ie, o - opera*/
+
+hr {
+    border: 0;
+    height: 0.1em;
+    background: orange;
+    background-image: -webkit-linear-gradient(left, #fff, orange, #fff);
+    background-image: -moz-linear-gradient(left, #fff, orange, #fff);
+    background-image: -ms-linear-gradient(left, #fff, orange, #fff);
+    background-image: -o-linear-gradient(left, #fff, orange, #fff);
+    margin-top: 1em;
+}
+
+fieldset {
+    width: 50vw; /* viewport width - ширина области просмотра */
+    margin: 3em auto; /* em - относительные единицы измерения в CSS */
+    font-size: 1.5em;
+    padding: 1.25em;
+    border: 0.1em solid orange;
+    border-radius: 1.25em; /* это свойство скругляет углы нашим элементам */
+}
+
+legend {
+    padding: 0.25em;
+    font-size: 0.75em;
+    font-weight: lighter; /* так мы делаем начертание текста более тонким */
+    text-transform: uppercase; /* все, что написано в legend, будет отображаться прописными буквами */
+    font-family: sans-serif;
+    border-radius: 0.5em;
+    border: 0.1em solid orange;
+
+
+}
+input {
+    outline: none; /* уберите это свойство и посмотрите, что произойдет */
+}
+input[type=text],[type=email],[type=password]{ /* я обратился к инпутам, у которых указаны типы text, email, password и ни к каким более */
+    width: 95%; /* ширина инпутов выставляется относительно родительского блока (fieldset) */
+    padding: 0.75em 1.25em;
+    box-sizing: border-box; /* попробуйте убрать эту строчку и посмотрите, что изменится в вашей форме */
+    border: 0.1em solid orange;
+    border-radius: 1.5em;
+    margin: 0.75em auto; /* кто помнит, что означает такая запись, - молодец =)) */
+}
+
+input[type=submit] { /* а вот уже здесь я обращаюсь именно к кнопке */
+    display: block;
+    margin: 1em auto;
+    padding: 0.5em;
+    background: transparent;
+    border: 0.1em solid orange;
+    border-radius: 1.25em;
+}
+
+input[type=submit]:hover{ /* добро пожаловать в мир псевдоклассов. спросите меня о них на уроке, пожалуйста.
+конкретно вот здесь я применяю стили к кнопке только в тот момент, когда на нее наведен курсор мыши.
+ CSS - это классно. */
+    color: white;
+    background: orange;
+    border: 0.1em solid orange;
+}
+
+input[value=Submit] { /* можно обращаться даже к надписи на самой кнопке */
+    font-size: 1.25em;
+    font-family: sans-serif;
+    color: orange;
+}
+
+
+
+input[placeholder] {
+    font-size: 0.75em; /* или к placeholder... */
+}
+
+.option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 1.3em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    transition: all 0.15s ease-out 0s; /* это простейшая анимация */
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    z-index: 1000;
+    border-radius: 2.5em;
+}
+.option-input:hover {
+    background: #9faab7;
+}
+.option-input:checked {
+    background: orange;
+}
+.option-input:checked::before {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 26.66667px;
+    text-align: center;
+    line-height: 40px;
+}
+.option-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: orange;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+.option-input.radio {
+    border-radius: 50%;
+}
+.option-input.radio::after {
+    border-radius: 50%;
+
+
+

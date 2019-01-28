@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form action="/action_page.py" method="post">
+        <fieldset>
+            <legend> Форма регистрации </legend>
+            <label for="name">Ваше имя: </label>
+            <input id="name" type="text" name="name" placeholder="Имя">
+            <label for="email">Ваша электронная почта: </label>
+            <input id="email" type="email" name="email" placeholder="mail@example.com">
+            <label for="pass">Придумайте пароль: </label>
+            <input id="pass" type="password" name="password" placeholder="Пароль">
+            <hr>
+            <p>Укажите ваш пол:</p>
+            <label>
+                <input type="radio" class="option-input" name="gender" value="male">
+                Мужчина
+            </label>
+            <br>
+            <label>
+                <input type="radio" class="option-input" name="gender" value="female">
+                Женщина
+            </label>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+</body>
+</html>
